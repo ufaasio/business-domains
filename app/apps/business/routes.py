@@ -57,13 +57,13 @@ class BusinessRouter(AbstractBaseRouter[Business, BusinessSchema]):
             user_id=user_id,
             offset=offset,
             limit=limit,
-            origin=origin,
+            domain=origin,
             name=name,
             uid=uid,
         )
 
         items_in_schema = [self.list_item_schema(**item.model_dump()) for item in items]
-
+        logging.info(f"list_items: {items_in_schema=}")
         return PaginatedResponse(
             items=items_in_schema,
             total=total,
