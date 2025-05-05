@@ -8,10 +8,10 @@ from usso.core import JWTConfig
 
 
 class Config(BaseModel):
-    core_url: str = "https://core.ufaas.io/"
-    api_os_url: str = "https://core.ufaas.io/api/v1/apps"
-    sso_url: str = "https://sso.ufaas.io/app-auth/access"
-    core_sso_url: str = "https://sso.ufaas.io/app-auth/access"
+    core_url: str = "https://core.uln.me/"
+    api_os_url: str = "https://core.uln.me/api/v1/apps"
+    sso_url: str = "https://sso.uln.me/app-auth/access"
+    core_sso_url: str = "https://sso.uln.me/app-auth/access"
 
     allowed_origins: list[str] = []
     jwt_config: JWTConfig = JWTConfig(**json.loads(Settings.JWT_CONFIG))
